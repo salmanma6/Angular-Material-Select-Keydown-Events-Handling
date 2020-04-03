@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  Angular Material 2 App
+</mat-toolbar>
+<div class="basic-container">
+  <p>
+    <button mat-button>Basic Button</button>
+    <mat-slide-toggle>Slide Toggle</mat-slide-toggle>
+  </p>
+  <span class="version-info">Current build: {{version.full}}</span>
+</div>
+
+<mat-form-field>
+  <mat-select  placeholder="Favorite food" [(ngModel)]="selectedFood1" (change)="onFoodSelection1()">
+    <mat-option  appSelectTab *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+  <mat-hint>(change) event</mat-hint>
+</mat-form-field> <br/><br/>
+
+<mat-form-field>
+  <mat-select placeholder="Favorite food" [(ngModel)]="selectedFood2" (ngModelChange)="onFoodSelection2()">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+  <mat-hint>(ngModelChange) event</mat-hint>
+</mat-form-field>
+<!--
+Copyright Google LLC All Rights Reserved.
+
+Use of this source code is governed by an MIT-style license that can be
+found in the LICENSE file at https://angular.io/license
+-->
